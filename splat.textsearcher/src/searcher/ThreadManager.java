@@ -9,10 +9,12 @@ public class ThreadManager {
 
   static ExecutorService collectService;
   static ExecutorService parseService;
+  static ExecutorService guiService;
 
   static {
     collectService = null;
     parseService = null;
+    guiService = Executors.newFixedThreadPool(1);
   }
 
   public static ExecutorService getParseService(){
@@ -27,5 +29,8 @@ public class ThreadManager {
 
   public static void setThreadCount(Integer count){
     parseCount = count;
+  }
+  public static ExecutorService getGuiService(){
+    return guiService;
   }
 }

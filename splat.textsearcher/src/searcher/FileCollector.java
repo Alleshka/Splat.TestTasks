@@ -20,6 +20,7 @@ public class FileCollector implements Callable<List<File>> {
 
     this.dirFilter = new DirectoryFilter();
     this.extFilter = new ExtensionFileFilter(ext);
+    System.out.println("Directory - " + dir);
   }
 
   @Override

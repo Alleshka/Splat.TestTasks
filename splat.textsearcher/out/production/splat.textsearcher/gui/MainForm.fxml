@@ -9,6 +9,9 @@
 
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.control.TextArea?>
+<?import gui.TreeFileViewer?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.TabPane?>
 <GridPane id="RootGrid" gridLinesVisible="true" maxWidth="Infinity"
   xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
   <rowConstraints>
@@ -31,13 +34,13 @@
         <RowConstraints/>
       </rowConstraints>
       <children>
-        <Text fx:id="dirPath" text="Путь до файла" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <Text fx:id="extension" text="Расширение файла" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Text text="Путь до файла" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="pathDir" text="D:\Project" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Text text="Расширение файла" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <TextField fx:id="extension" text="log" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
         <Text text="Сообщение" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-        <TextField fx:id="message" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
-        <Button fx:id="btnSearch" onAction="#click" text="Search" GridPane.columnIndex="3"
+        <TextField fx:id="message" text="Alleshka" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <Button fx:id="btnSearch" onAction="#search" text="Search" GridPane.columnIndex="3"
           GridPane.rowIndex="0"
           GridPane.rowSpan="2"/>
       </children>
@@ -48,8 +51,20 @@
         <ColumnConstraints/>
       </columnConstraints>
       <children>
-        <TreeView GridPane.columnIndex="0"/>
-        <TextArea GridPane.columnIndex="1"/>
+        <GridPane GridPane.columnIndex="0">
+          <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+          </rowConstraints>
+          <children>
+            <TreeFileViewer fx:id="tree" GridPane.rowIndex="0"/>
+            <Button text="Загрузить" onAction="#selectChange" GridPane.rowIndex="1" alignment="BOTTOM_CENTER"/>
+          </children>
+        </GridPane>
+        <TabPane GridPane.columnIndex="1" fx:id="fileTab">
+
+        </TabPane>
+        <!--<TextArea GridPane.columnIndex="1" fx:id="fileContent"/>-->
       </children>
     </GridPane>
   </children>
