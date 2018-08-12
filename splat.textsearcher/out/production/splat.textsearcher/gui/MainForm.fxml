@@ -41,8 +41,8 @@
         <Text text="Сообщение" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
         <TextField fx:id="message" text="Alleshka" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
         <Button fx:id="btnSearch" onAction="#search" text="Search" GridPane.columnIndex="3"
-          GridPane.rowIndex="0"
-          GridPane.rowSpan="2"/>
+          GridPane.rowIndex="1"
+          GridPane.rowSpan="1"/>
       </children>
     </GridPane>
     <GridPane id="WorkArea" GridPane.rowIndex="1">
